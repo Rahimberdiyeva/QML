@@ -1,0 +1,47 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+
+ApplicationWindow {
+    visible: true
+    width: 400
+    height: 400
+
+    // Основной контейнер для фигуры
+    Rectangle {
+        width: parent.width
+        height: parent.height
+        color: "lightblue"
+
+        // Глаза
+        Rectangle {
+            id: leftEye
+            width: 40
+            height: 40
+            color: "black"
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.margins: 100
+        }
+
+        Rectangle {
+            id: rightEye
+            width: 40
+            height: 40
+            color: "black"
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.margins: 100
+        }
+
+        // Рот
+        Rectangle {
+            id: mouth
+            width: 120
+            height: 20
+            color: "black"
+            anchors.top: leftEye.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.margins: 20
+        }
+    }
+}
