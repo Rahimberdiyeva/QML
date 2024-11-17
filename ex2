@@ -1,0 +1,52 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+
+ApplicationWindow {
+    visible: true
+    width: 800
+    height: 600
+    title: "Макет с якорными привязками"
+
+    // Основной элемент для контейнера
+    Rectangle {
+        anchors.fill: parent
+        color: "#eef"
+
+        // Заголовок
+        Text {
+            id: titleText
+            text: "I Wish Happy life"
+            font.pointSize: 24
+            anchors.top: parent.top
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.topMargin: 20
+        }
+
+        // Контейнер для кнопок
+        Column {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: titleText.bottom
+            anchors.topMargin: 20
+            spacing: 20 // Расстояние между кнопками
+
+            // Установим ширину для Column, если это необходимо
+            width: parent.width * 0.3
+
+            // Первая кнопка
+            Button {
+                id: button1
+                text: "Кнопка 1"
+                width: parent.width // Используйте ширину Column
+                height: width * 0.2 // Сохраняем пропорции
+            }
+
+            // Вторая кнопка
+            Button {
+                id: button2
+                text: "Кнопка 2"
+                width: parent.width // Используйте ширину Column
+                height: width * 0.2 // Сохраняем пропорции
+            }
+        }
+    }
+}
